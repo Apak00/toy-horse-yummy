@@ -1,0 +1,78 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Toy Horse Yummy</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="manifest" href="site.webmanifest">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <div class="wrapper">
+            <div>
+                <table class="table">
+                    <tr>
+                        <th>User Name</th>
+                        <th>Score</th>
+                    </tr>
+
+                </table>
+            </div>
+            <div id="gameOver">
+                <span>GAME OVER</span>
+            </div>
+            <div>
+                <input type="text" placeholder="User Name">
+                <button id="startButton">Start Game</button>
+                <button id="leaderBoardButton">Leader Board</button>
+                <button id="restartButton">Restart</button>
+            </div>
+            <img class="specialItem" src="img/Eggplant.png" height="64" width="64"/>
+            <img class="specialItem" src="img/Watermelon.png" height="64" width="64"/>
+            <img class="specialItem" src="img/Carrot.png" height="617" width="632"/>
+            <img class="trashCaughtImg" src="img/Grass_Tuft_Picked.png" height="144" width="188"/>
+            <img class="trashImg" src="img/Grass_Tuft.png" height="60" width="45"/>
+            <img class="horse" src="img/horse-brown-up.png" height="62" width="192"/>
+            <img class="horse" src="img/horse-brown-right.png" height="62" width="192"/>
+            <img class="horse" src="img/horse-brown-down.png" height="62" width="192"/>
+            <img class="horse" src="img/horse-brown-left.png" height="62" width="192"/>
+
+        </div>
+
+        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
+
+        <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-app.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            let config = {
+                apiKey: "AIzaSyAWuFVvM47e5Uw2OtdOlCmH2FBypPad3ac",
+                authDomain: "toyhorseyummy.firebaseapp.com",
+                databaseURL: "https://toyhorseyummy.firebaseio.com",
+                projectId: "toyhorseyummy",
+                storageBucket: "toyhorseyummy.appspot.com",
+                messagingSenderId: "128085072370"
+            };
+            firebase.initializeApp(config);
+        </script>
+
+
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+
+    </body>
+</html>
