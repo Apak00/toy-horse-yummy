@@ -1,0 +1,64 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Toy Horse Yummy</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="manifest" href="../site.webmanifest">
+
+        <!--build:css css/styles.min.css-->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/mySass.css">
+        <!--endbuild-->
+    </head>
+    <body>
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <div class="wrapper">
+
+            <div id="gameOver">
+                <span>GAME OVER</span>
+            </div>
+            <div id="inputField">
+                <input type="text" placeholder="User Name">
+                <button id="startButton">Start Game</button>
+                <button id="leaderBoardButton">Leader Board</button>
+                <button id="restartButton">Restart</button>
+            </div>
+            <div>
+                <table class="table">
+                    <tr>
+                        <th>User Name</th>
+                        <th>Score</th>
+                    </tr>
+
+                </table>
+            </div>
+            <img class="specialItem" src="img/Eggplant.png" height="64" width="64"/>
+            <img class="specialItem" src="img/Watermelon.png" height="64" width="64"/>
+            <img class="specialItem" src="img/Carrot.png" height="617" width="632"/>
+            <img class="trashCaughtImg" src="img/Grass_Tuft_Picked.png" height="144" width="188"/>
+            <img class="trashImg" src="img/Grass_Tuft.png" height="60" width="45"/>
+            <img class="horse" src="img/horse-brown-up.png" height="62" width="192"/>
+            <img class="horse" src="img/horse-brown-right.png" height="62" width="192"/>
+            <img class="horse" src="img/horse-brown-down.png" height="62" width="192"/>
+            <img class="horse" src="img/horse-brown-left.png" height="62" width="192"/>
+        </div>
+
+        <!--build:js js/main.min.js-->
+        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+        <script src="js/firebaseInit.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <!--endbuild-->
+
+    </body>
+</html>

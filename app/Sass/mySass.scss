@@ -1,0 +1,54 @@
+
+canvas {
+  border:1px solid #000000;
+  background-color: #f1a4ac;
+
+}
+
+.trashImg{display : none;}
+.horse{display: none;}
+.trashCaughtImg{display: none;}
+.specialItem{display: none;}
+#restartButton{ display: none;}
+table {
+  display: none;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+#gameOver {
+  font-family: "Bauhaus 93","sans-serif";
+  display: none;
+  font-size: 64px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: darkred;
+  line-height: 800px;
+  width: 800px;
+  height: 800px;
+  text-align: center;
+  z-index: 3;
+}
+#inputField {
+  padding: 10px;
+}
+.wrapper{
+  position: relative;
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #555555;
+}

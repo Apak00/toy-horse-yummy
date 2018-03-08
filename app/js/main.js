@@ -2,10 +2,6 @@
 
 (function () {
     // the DOM will be available here
-    let trashImg = document.getElementsByClassName("trashImg")[0];
-    let playerHorseImg = document.getElementsByClassName("horse");
-    let trashCaughtImg = document.getElementsByClassName("trashCaughtImg")[0];
-    let specialItemImg = document.getElementsByClassName("specialItem");
 
     let gameOver = document.getElementById("gameOver");
     let startButton = document.getElementById("startButton");
@@ -13,9 +9,13 @@
     let restartButton = document.getElementById("restartButton");
     let playerNameInput = document.getElementsByTagName("input")[0];
     let leaderBoardTable = document.getElementsByTagName("table")[0];
+    let wrapper = document.getElementsByClassName("wrapper")[0];
 
 
-    restartButton.style.display = "none";
+    let trashImg = document.getElementsByClassName("trashImg")[0];
+    let playerHorseImg = document.getElementsByClassName("horse");
+    let trashCaughtImg = document.getElementsByClassName("trashCaughtImg")[0];
+    let specialItemImg = document.getElementsByClassName("specialItem");
 
     leaderBoardButton.onclick = function () {
         dbRef.child("myLeaderBoard").once("value", snap => {
@@ -30,14 +30,12 @@
         playerNameInput.style.display = "unset";
         restartButton.style.display = "none";
     };
-
     startButton.onclick = function () {
         startGame(playerNameInput.value);
-
     };
-
     restartButton.onclick = function () {
         myGameMap.remove();
+        gameOver.style.display = "none";
         leaderBoardButton.style.display = "unset";
         leaderBoardTable.style.display = "none";
         startButton.style.display = "unset";
@@ -192,8 +190,6 @@
         playerScore.text = "Score: " + playerScore.currentScore;
         sessionTime = new Component(myGameMap.canvas.width - 200, 50, 50, 50, "cyan", "time");
         sessionTime.currentTime = myGameMap.currentTime;
-
-
     }
 
     function initTrashes() {
@@ -219,7 +215,7 @@
                 this.canvas.width = 800;
                 this.canvas.height = 800;
                 this.context = this.canvas.getContext("2d");
-                document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+                wrapper.insertBefore(this.canvas, wrapper.childNodes[0]);
                 this.interval = setInterval(updateGameMap, 20);
                 if (Object.keys(myGameMap.specialItems).length < 4) {
 
@@ -255,7 +251,7 @@
                 this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
             },
             remove: function () {
-                document.body.removeChild(this.canvas);
+                wrapper.removeChild(this.canvas);
                 this.clearIntervals();
             },
             clearIntervals: function () {
@@ -268,7 +264,7 @@
     }
 
     function startGame(userName) {
-        if (tableBody.includes(userName) && userName !== "") {
+        if (Object.keys(leaderBoard).includes(userName) && userName !== "") {
             alert("User Name Already Exist!");
         } else {
             if (userName === "")
